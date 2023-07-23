@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "dgSpecHash": "4fPAVILHstM77GfiY2EuOSwgp3kKUAgJTBXzzCJfqFNU1ptPgYW8paWdWZLGG6kie3JMvRo1j1GvFYDBIfkYeA==",
+  "success": true,
+  "projectFilePath": "/Users/sven/Work/dotnet/CherryWeb/CherryWeb.csproj",
+  "expectedPackageFiles": [
+    "/Users/sven/.nuget/packages/com.ctrip.framework.apollo/2.10.0/com.ctrip.framework.apollo.2.10.0.nupkg.sha512",
+    "/Users/sven/.nuget/packages/com.ctrip.framework.apollo.configuration/2.10.1/com.ctrip.framework.apollo.configuration.2.10.1.nupkg.sha512",
+    "/Users/sven/.nuget/packages/microsoft.aspnetcore.openapi/7.0.0/microsoft.aspnetcore.openapi.7.0.0.nupkg.sha512",
+    "/Users/sven/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/Users/sven/.nuget/packages/microsoft.extensions.configuration/3.1.0/microsoft.extensions.configuration.3.1.0.nupkg.sha512",
+    "/Users/sven/.nuget/packages/microsoft.extensions.configuration.abstractions/3.1.0/microsoft.extensions.configuration.abstractions.3.1.0.nupkg.sha512",
+    "/Users/sven/.nuget/packages/microsoft.extensions.configuration.binder/3.1.0/microsoft.extensions.configuration.binder.3.1.0.nupkg.sha512",
+    "/Users/sven/.nuget/packages/microsoft.extensions.logging.abstractions/3.1.0/microsoft.extensions.logging.abstractions.3.1.0.nupkg.sha512",
+    "/Users/sven/.nuget/packages/microsoft.extensions.primitives/3.1.0/microsoft.extensions.primitives.3.1.0.nupkg.sha512",
+    "/Users/sven/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/Users/sven/.nuget/packages/swashbuckle.aspnetcore/6.4.0/swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "/Users/sven/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "/Users/sven/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "/Users/sven/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.4.0/swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
+    "/Users/sven/.nuget/packages/system.net.http.json/6.0.0/system.net.http.json.6.0.0.nupkg.sha512",
+    "/Users/sven/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "/Users/sven/.nuget/packages/system.text.encodings.web/6.0.0/system.text.encodings.web.6.0.0.nupkg.sha512",
+    "/Users/sven/.nuget/packages/system.text.json/6.0.0/system.text.json.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
