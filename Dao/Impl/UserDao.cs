@@ -1,5 +1,5 @@
 using CherryWeb.Models;
-using CherryWeb.Contexts;
+using CherryWeb.Dao.Contexts;
 
 namespace CherryWeb.Dao.Impl {
     public class UserDao : IUserDao {
@@ -10,7 +10,7 @@ namespace CherryWeb.Dao.Impl {
         }
 
         public bool CreateUser(User user) {
-            _mainDbContext.User.Add(user);
+            _mainDbContext.User?.Add(user);
             return _mainDbContext.SaveChanges() > 0;
         }
 

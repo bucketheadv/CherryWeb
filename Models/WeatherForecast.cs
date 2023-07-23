@@ -1,4 +1,4 @@
-namespace CherryWeb;
+namespace CherryWeb.Models;
 
 public class WeatherForecast
 {
