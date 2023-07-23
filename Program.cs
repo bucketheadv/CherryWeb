@@ -15,7 +15,8 @@ LogManager.UseConsoleLogging(Com.Ctrip.Framework.Apollo.Logging.LogLevel.Trace);
 builder.Configuration.AddApollo(builder.Configuration.GetSection("Apollo"))
     .AddDefault();
 
-DbInitializer.Init(builder);
+DbInit.Init(builder);
+RedisInit.Init(builder);
 
 var app = builder.Build();
 

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CherryWeb.Initializers
 {
-    public abstract class DbInitializer
+    public abstract class DbInit
     {
         public static void Init(WebApplicationBuilder builder)
         {
