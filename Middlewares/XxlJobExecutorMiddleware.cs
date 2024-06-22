@@ -2,32 +2,21 @@ using DotXxlJob.Core;
 
 namespace CherryWeb.Middlewares;
 
-public class XxlJobExecutorMiddleware
+public class XxlJobExecutorMiddleware(IServiceProvider provider, RequestDelegate next)
 {
+    private readonly XxlRestfulServiceHandler _rpcService = provider.GetRequiredService<XxlRestfulServiceHandler>();
 
-    private readonly IServiceProvider _serviceProvider;
-
-    private readonly RequestDelegate _next;
-
-    private readonly XxlRestfulServiceHandler _rpcService;
-
-    public XxlJobExecutorMiddleware(IServiceProvider provider, RequestDelegate next)
-    {
-        this._serviceProvider = provider;
-        this._next = next;
-        this._rpcService = _serviceProvider.GetRequiredService<XxlRestfulServiceHandler>();
-    }
+    private readonly List<string> _xxlJobUris = [..new[] { "/beat", "/idlebeat", "/run", "/kill", "/log" }];
 
     public async Task Invoke(HttpContext context)
     {
-        string contentType = context.Request.ContentType;
-        if ("POST".Equals(context.Request.Method, StringComparison.OrdinalIgnoreCase)
-            && !string.IsNullOrEmpty(contentType) && contentType.ToLower().StartsWith("application/json"))
+        string path = context.Request.Path;
+        if (_xxlJobUris.Contains(path))
         {
             await _rpcService.HandlerAsync(context.Request, context.Response);
             return;
         }
 
-        await _next.Invoke(context);
+        await next.Invoke(context);
     }
 }
