@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CherryWeb.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("[controller]/[action]")]
 public class ApolloController : ControllerBase {
     private readonly IConfiguration _configuration;
 
