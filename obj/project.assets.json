@@ -36,7 +36,7 @@
           }
         }
       },
-      "DotXxlJob.Core/2.3.3": {
+      "DotXxlJob.Core/2.3.4": {
         "type": "package",
         "dependencies": {
           "Flurl.Http": "2.4.2",
@@ -1028,13 +1028,13 @@
         "lib/netstandard2.1/Com.Ctrip.Framework.Apollo.Configuration.xml"
       ]
     },
-    "DotXxlJob.Core/2.3.3": {
-      "sha512": "Lp2hCNWKtcHJehN1jbLy1z6NnVNzyI1pjVOdA+ZgJrdPuszFNDNh8iP53xsJL2+z1M8co1T/w9b87MFbXdYnSQ==",
+    "DotXxlJob.Core/2.3.4": {
+      "sha512": "CEAQb0yjmvI/H5/qU7BT94PCSiQA/69ycjNeRtFgDa6LT3AdD/UTYoldUIr0WcshnLdMZwvAhXS7sF0n4zruiQ==",
       "type": "package",
-      "path": "dotxxljob.core/2.3.3",
+      "path": "dotxxljob.core/2.3.4",
       "files": [
         ".nupkg.metadata",
-        "dotxxljob.core.2.3.3.nupkg.sha512",
+        "dotxxljob.core.2.3.4.nupkg.sha512",
         "dotxxljob.core.nuspec",
         "lib/netstandard2.0/DotXxlJob.Core.dll"
       ]
@@ -2924,7 +2924,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Com.Ctrip.Framework.Apollo.Configuration >= 2.10.1",
-      "DotXxlJob.Core >= 2.3.3",
+      "DotXxlJob.Core >= 2.3.4",
       "Microsoft.AspNetCore.OpenApi >= 8.0.4",
       "Microsoft.EntityFrameworkCore >= 7.0.9",
       "Pomelo.EntityFrameworkCore.MySql >= 7.0.0",
@@ -2976,7 +2976,7 @@
           },
           "DotXxlJob.Core": {
             "target": "Package",
-            "version": "[2.3.3, )"
+            "version": "[2.3.4, )"
           },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",

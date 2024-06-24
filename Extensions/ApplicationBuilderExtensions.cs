@@ -1,28 +1,27 @@
+using System.Net;
 using CherryWeb.Dao;
 using CherryWeb.Dao.Contexts;
 using CherryWeb.Dao.Impl;
 using CherryWeb.Jobs;
-using CherryWeb.Middlewares;
+using Com.Ctrip.Framework.Apollo;
+using Com.Ctrip.Framework.Apollo.Logging;
 using DotXxlJob.Core;
 using Microsoft.EntityFrameworkCore;
 using StackExchange.Redis;
+using LogLevel = Com.Ctrip.Framework.Apollo.Logging.LogLevel;
 
 namespace CherryWeb.Extensions;
 
 public static class ApplicationBuilderExtensions
 {
-    public static IApplicationBuilder UseXxlJobExecutor(this IApplicationBuilder @this)
-    {
-        return @this.UseMiddleware<XxlJobExecutorMiddleware>();
-    }
-
     public static void UseExposureHost(this WebApplicationBuilder @this)
     {
-        var conf = @this.Configuration.GetSection("xxlJob");
-        var port = conf["port"];
-        var url = $"http://0.0.0.0:{port}";
-        // 必须监听0.0.0.0，否则xxl-job通过ip调用调不通
-        @this.WebHost.UseUrls(url);
+        var port = @this.Configuration.GetSection("Server")["Port"];
+        @this.WebHost.UseKestrel((options =>
+        {
+            // 必须监听0.0.0.0，否则xxl-job通过ip调用调不通
+            options.Listen(IPAddress.Any, Convert.ToInt32(port));
+        }));
     }
 
     public static void InitXxlJobConfiguration(this WebApplicationBuilder @this)
@@ -48,5 +47,12 @@ public static class ApplicationBuilderExtensions
         if (value == null) return;
         IConnectionMultiplexer redis = ConnectionMultiplexer.Connect(value);
         @this.Services.AddSingleton(redis);
+    }
+
+    public static void InitApolloConfiguration(this WebApplicationBuilder @this)
+    {
+        LogManager.UseConsoleLogging(LogLevel.Info);
+        var configuration = @this.Configuration.GetSection("Apollo");
+        @this.Configuration.AddApollo(configuration).AddDefault();
     }
 }

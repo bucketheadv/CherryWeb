@@ -1,6 +1,6 @@
+using System.Net;
 using CherryWeb.Extensions;
-using Com.Ctrip.Framework.Apollo;
-using Com.Ctrip.Framework.Apollo.Logging;
+using DotXxlJob.Core.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,14 +11,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// builder.UseExposureHost();
+builder.InitApolloConfiguration();
+builder.UseExposureHost();
 builder.InitXxlJobConfiguration();
 builder.InitDbConfiguration();
 builder.InitRedisConfiguration();
-
-LogManager.UseConsoleLogging(Com.Ctrip.Framework.Apollo.Logging.LogLevel.Trace);
-builder.Configuration.AddApollo(builder.Configuration.GetSection("Apollo"))
-    .AddDefault();
 
 var app = builder.Build();
 

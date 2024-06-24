@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "PN3Hapgi6Ol7kXf8gXubjLOcMZeY3bSUG6vKzo8jFmUrNpel0nionwCWmBDRhlR3oqvRVF7f7uklKip173W+Hw==",
+  "dgSpecHash": "q5v6gscktk8k5kVk+5wcwx7AYnHatfwf+l+M564a3gD9qJY6cR1u/NCfC4tL/bgqyudcZWGZwSrAJ++u26k79w==",
   "success": true,
   "projectFilePath": "/Users/sven/RiderProjects/CherryWeb/CherryWeb.csproj",
   "expectedPackageFiles": [
     "/Users/sven/.nuget/packages/com.ctrip.framework.apollo/2.10.0/com.ctrip.framework.apollo.2.10.0.nupkg.sha512",
     "/Users/sven/.nuget/packages/com.ctrip.framework.apollo.configuration/2.10.1/com.ctrip.framework.apollo.configuration.2.10.1.nupkg.sha512",
-    "/Users/sven/.nuget/packages/dotxxljob.core/2.3.3/dotxxljob.core.2.3.3.nupkg.sha512",
+    "/Users/sven/.nuget/packages/dotxxljob.core/2.3.4/dotxxljob.core.2.3.4.nupkg.sha512",
     "/Users/sven/.nuget/packages/flurl/2.8.2/flurl.2.8.2.nupkg.sha512",
     "/Users/sven/.nuget/packages/flurl.http/2.4.2/flurl.http.2.4.2.nupkg.sha512",
     "/Users/sven/.nuget/packages/microsoft.aspnetcore.http.abstractions/2.2.0/microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
