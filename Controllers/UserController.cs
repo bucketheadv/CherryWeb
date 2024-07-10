@@ -7,25 +7,14 @@ namespace CherryWeb.Controllers;
 
 [ApiController]
 [Route("[controller]/[action]")]
-public class UserController : ControllerBase {
-    private readonly IUserDao _userDao;
-
-    private readonly IConnectionMultiplexer _redis;
-
-    private readonly ILogger<UserController> _logger;
-
-    public UserController(IUserDao userDao, IConnectionMultiplexer redis, ILogger<UserController> logger)
-    {
-        _userDao = userDao;
-        _redis = redis;
-        _logger = logger;
-    }
-
+public class UserController(IUserDao userDao, IDatabase redis, ILogger<UserController> logger)
+    : ControllerBase
+{
     [HttpGet]
     public User? GetUser(long id)
     {
-        string? abc = _redis.GetDatabase(0).StringGet("abc");
-        _logger.LogInformation("获取abc: {}", abc);
-        return _userDao.GetUser(id);
+        string? abc = redis.StringGet("abc");
+        logger.LogInformation("获取abc: {}", abc);
+        return userDao.GetUser(id);
     }
 }

@@ -1,9 +1,9 @@
 using CherryWeb.Models;
 
-namespace CherryWeb.Dao {
-    public interface IUserDao {
-        bool CreateUser(User user);
+namespace CherryWeb.Dao;
 
-        User? GetUser(long id);
-    }
+public interface IUserDao {
+    bool CreateUser(User user);
+
+    User? GetUser(long id);
 }

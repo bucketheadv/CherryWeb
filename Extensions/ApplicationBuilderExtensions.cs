@@ -17,11 +17,11 @@ public static class ApplicationBuilderExtensions
     public static void UseExposureHost(this WebApplicationBuilder @this)
     {
         var port = @this.Configuration.GetSection("Server")["Port"];
-        @this.WebHost.UseKestrel((options =>
+        @this.WebHost.UseKestrel(options =>
         {
             // 必须监听0.0.0.0，否则xxl-job通过ip调用调不通
             options.Listen(IPAddress.Any, Convert.ToInt32(port));
-        }));
+        });
     }
 
     public static void InitXxlJobConfiguration(this WebApplicationBuilder @this)
@@ -45,8 +45,10 @@ public static class ApplicationBuilderExtensions
         var redisConfig = @this.Configuration.GetSection("Redis");
         var value = redisConfig?["Value"];
         if (value == null) return;
-        IConnectionMultiplexer redis = ConnectionMultiplexer.Connect(value);
+        var redis = ConnectionMultiplexer.Connect(value);
         @this.Services.AddSingleton(redis);
+        var db = redis.GetDatabase(0);
+        @this.Services.AddSingleton(db);
     }
 
     public static void InitApolloConfiguration(this WebApplicationBuilder @this)

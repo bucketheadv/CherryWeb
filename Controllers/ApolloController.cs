@@ -1,21 +1,23 @@
+using CherryWeb.Extensions;
+using CherryWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CherryWeb.Controllers;
 
 [ApiController]
 [Route("[controller]/[action]")]
-public class ApolloController : ControllerBase {
-    private readonly IConfiguration _configuration;
-
-    private readonly ILogger<ApolloController> _logger;
-
-    public ApolloController(IConfiguration configuration, ILogger<ApolloController> logger) {
-        _configuration = configuration;
-        _logger = logger;
+public class ApolloController(IConfiguration configuration, ILogger<ApolloController> logger)
+    : ControllerBase
+{
+    [HttpGet]
+    public string? GetConfig() {
+        return configuration.GetApolloValue("my.name");
     }
 
-    [HttpGet]
-    public object? Get() {
-        return _configuration["my.name"];
+    public object? GetUser()
+    {
+        var value = configuration.GetApolloValue<User>("default.user");
+        logger.LogInformation("获取到值 : {0}", value);
+        return value;
     }
 }
